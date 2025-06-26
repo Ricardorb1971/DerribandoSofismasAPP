@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Derribando Sofismas</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="theme-toggle">
+    <label>
+      🌙 <input type="checkbox" id="darkModeToggle" /> ☀️
+    </label>
+  </div>
+
+  <div id="welcome-screen" class="welcome-screen">
+    <p class="welcome-text">
+      “Tengan siempre en la mano el escudo de la fe, con el que podrán apagar todas las flechas encendidas del Maligno. Tomen el casco de la salvación, y la espada del Espíritu, que es la Palabra de Dios.”<br>
+      <span>(Efesios 6:16-17)</span>
+    </p>
+  </div>
+
+  <div id="main-wrapper" class="hidden">
+    <div id="main-screen" class="card">
+      <h1 class="title">Derribando Sofismas</h1>
+      <img class="wall" src="https://static.wixstatic.com/media/d292ed_73b1ad8f44aa46c6aca077efaf1a596e~mv2.png" alt="Wall Image">
+      <p class="verse">"Estén siempre dispuestos a defenderse delante de cualquiera que les pida razón de la esperanza que ustedes tienen..." (2Co.10:4)</p>
+      <button class="button" onclick="loadView(1)">📖 Escoger el Tema</button>
+      <button class="button" onclick="loadView(2)">📖 Escoger Estudios</button>
+      <button class="button" onclick="loadFavorites()">🌟 Mis Lecturas Favoritas</button>
+    </div>
+
+    <div id="navigation-bar" class="nav-bar hidden">
+      <button id="back-button" class="nav-button">
+        <img id="nav-icon" src="" alt="Icono" height="24">
+      </button>
+    </div>
+
+    <div id="content" class="content-view"></div>
+
+    <footer class="footer">
+      <span>📧 Contacto: <a href="mailto:derribandosofismas@gmail.com">derribandosofismas@gmail.com</a>,</span>
+      <span>🌐 Página web: <a href="https://www.derribandosofismas.com" target="_blank">www.derribandosofismas.com</a>,</span>
+      <span>📘 Facebook: <a href="https://www.facebook.com/profile.php?id=100083230583264" target="_blank">Derribando Sofismas</a>.</span>
+    </footer>
+  </div>
+
+  <div id="libraryModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>📚 Guardar en Biblioteca</h3>
+      <select id="librarySelect"></select>
+      <input type="text" id="newLibraryInput" placeholder="o crea una nueva...">
+      <div class="color-options">
+        <label>Color: </label>
+        <input type="color" id="colorPicker" />
+      </div>
+      <button onclick="guardarEnBiblioteca()">Guardar</button>
+      <button onclick="cerrarModal()">Cancelar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
